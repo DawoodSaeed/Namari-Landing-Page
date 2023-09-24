@@ -1,0 +1,701 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Quicksand", "Open Sans", sans-serif, Arial, Helvetica;
+  background-color: #cccccc;
+  color: #111;
+  overflow-y: visible;
+}
+
+h1,
+button {
+  font-family: "Open Sans" !important;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3,
+h4 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 17px;
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+:root {
+  --primary-color: #d2b356;
+}
+
+/*  ################################## COMMON STYLING ################# */
+
+.section-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 20px 0px;
+}
+
+.section-title::after {
+  content: "";
+  background: #d2b356;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 5px;
+  margin-top: 30px;
+}
+
+.animateMe {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-in;
+}
+
+.grayH3 {
+  text-transform: uppercase;
+  color: #dadada;
+}
+
+/* ############################### STYLING ############## */
+#wrapper {
+  margin: 0px 25px;
+  padding: 25px 0px;
+  height: 100%;
+}
+
+.header {
+  background: url(../images/bear-cycling.jpg) no-repeat center top;
+  background-size: cover;
+  background-position: center -8px;
+  position: relative;
+  background-attachment: fixed;
+  padding: 100px 0px;
+}
+
+/* Navbar */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  margin: auto;
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  z-index: 10;
+}
+
+.header-nav.active {
+  position: fixed;
+  animation: navAnimation 0.4s ease-in;
+  height: 60px;
+  box-shadow: 0px 0px 0px 0px #dadada;
+  width: calc(100% - 50px);
+  border-bottom: 1px solid #dadada;
+  top: 0px;
+  left: 0px;
+  margin: 0px 25px;
+  background: #fff;
+  z-index: 100;
+}
+
+@keyframes navAnimation {
+  0% {
+    opacity: 0;
+    height: 0px;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+    height: 60px;
+  }
+}
+.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.header-nav__logo img {
+  max-height: 22px;
+}
+
+.header-nav__items ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 13px;
+  align-items: center;
+}
+
+.header-nav li {
+  cursor: pointer;
+}
+
+.header-nav__socials ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header-text {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0px 50px;
+  position: relative;
+}
+
+.header-text::after,
+.header-text::before {
+  background: var(--primary-color);
+  content: "";
+  display: block;
+  width: 30px;
+  height: 5px;
+  margin-top: 30px;
+}
+
+.header-text h1 {
+  font-size: 62px;
+  line-height: 60px;
+  font-weight: 800;
+  padding-top: 20px;
+}
+
+.header-text p {
+  margin: 20px 0px;
+  font-weight: 300;
+}
+
+.primaryBtn {
+  border: 3px solid #111;
+  padding: 0px;
+  text-transform: uppercase;
+  color: #111;
+  background-color: transparent;
+  font: inherit;
+  width: fit-content;
+  padding: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.primaryBtn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* ############################ ABOUT SECTION ###################### */
+
+#about {
+  padding: 70px 50px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#about .about-left {
+  min-width: 40%;
+}
+
+#about .about-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#about .about-right > div {
+  width: 45%;
+  margin-top: 15px;
+}
+
+.about-right__box i {
+  color: var(--primary-color);
+  font-size: 3vw;
+}
+
+.about-right__box h4 {
+  margin: 10px 0px;
+}
+
+.about-right p {
+  font-weight: 300;
+}
+
+.about-left p {
+  font-weight: 300;
+}
+
+#gallery {
+  padding: 70px 50px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#gallery > .gallery_image {
+  width: 33.33%;
+  position: relative;
+}
+
+.gallery_image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery_image::after,
+.gallery_image > div {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.gallery_image > div {
+  background: transparent;
+  z-index: 1;
+}
+
+.gallery_image > div > i {
+  color: var(--primary-color);
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.gallery_image:hover::after {
+  opacity: 0.4;
+}
+
+.gallery_image:hover div {
+  opacity: 1;
+}
+
+.gallery_full_view {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: rgba(12, 12, 12, 0.9);
+  z-index: 1000;
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+}
+
+.gallery_full_view .cross {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.gallery_full_view img {
+  max-width: 70%;
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+.imageShowActive {
+  animation: imageShowAnimate 0.4s ease-in;
+}
+
+@keyframes imageShowAnimate {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.gallery_full_view i {
+  font-size: 4vmax;
+  color: #dadada;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.gallery_full_view i:hover {
+  color: var(--primary-color);
+}
+
+#services {
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  padding: 70px 50px;
+}
+
+#services > div {
+  width: 33.33%;
+}
+
+#services img {
+  width: 100%;
+}
+
+#services blockquote {
+  width: 90%;
+}
+
+#services blockquote q {
+  font-size: 22px;
+  display: block;
+}
+
+#services blockquote footer {
+  text-align: right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+#services p {
+  margin: 20px 0px;
+}
+
+#services .primaryBtn {
+  margin-top: 20px;
+}
+
+/* ############## TESTIMONAILS SECTION ################ */
+#testimonails {
+  padding: 70px 50px;
+  background: #fff;
+  text-align: center;
+}
+
+#testimonails .section-title::after {
+  margin: 30px auto 25px auto;
+}
+
+.testimonails-feedback {
+  display: flex;
+  align-items: center;
+}
+
+.testimonails-feedback > div {
+  width: 33.33%;
+  display: flex;
+  text-align: center;
+}
+
+.testimonail img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.testimonail blockquote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-wrap: wrap;
+  text-align: center;
+  width: 90%;
+}
+
+.testimonail blockquote q {
+  margin: 20px 0px;
+}
+
+/* ############################## CLIENTS SECTION ######## */
+#clients {
+  background: #fff;
+  padding: 70px 50px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.clients-left {
+  min-width: 40%;
+}
+
+.clients-right {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clients-right > div {
+  width: 33.33%;
+}
+
+.clients-right .clients-right__box img {
+  width: 100%;
+}
+
+.clients-right__box {
+  position: relative;
+}
+
+.clients-right__box:hover div {
+  opacity: 1;
+}
+
+.clients-right__box-text {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ############################# PRICING ################ */
+#pricing {
+  padding: 70px 50px 150px 50px;
+  background: #eee;
+  position: relative;
+}
+
+#pricing footer {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #888;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background: #fff;
+  cursor: pointer;
+}
+
+#pricing footer i {
+  color: var(--primary-color);
+  font-weight: 800;
+}
+.pricing-description {
+  text-align: center;
+}
+
+#pricing .section-title::after {
+  margin: 30px auto 25px auto;
+}
+
+.prices {
+  display: flex;
+  gap: 40px;
+}
+
+#pricing .primaryBtn {
+  margin: auto;
+  margin-top: 40px;
+}
+.prices > div {
+  width: 33.33%;
+  text-align: center;
+  padding: 50px 10px;
+  border-radius: 3px;
+  border: 7px solid #fff;
+  transition: all 0.4s ease-in;
+}
+
+.prices > div:hover {
+  border: 7px solid var(--primary-color);
+  cursor: pointer;
+}
+
+.prices > div h5 {
+  font-size: 16px;
+}
+
+.choice .choice-price {
+  background-color: #eee;
+  margin: 20px 0px;
+  padding: 20px;
+}
+
+.choice .choice-price p {
+  font-style: italic;
+  color: #bdbdbd;
+}
+
+.choice .choice-price .price {
+  font-size: 40px;
+}
+
+.choice .choice-title p {
+  font-style: italic;
+}
+
+.prices ul {
+  list-style: none;
+}
+
+.prices ul li {
+  padding: 15px 0px;
+  border-bottom: 1px solid #dadada;
+}
+
+.choice {
+  background: #fff;
+}
+/* For mobile screens  */
+@media (max-width: 600px) {
+  #wrapper {
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    background-attachment: scroll;
+  }
+  .header-nav {
+    padding: 0px 25px;
+  }
+
+  .header-nav__items,
+  .header-nav__socials {
+    display: none;
+  }
+  .header-text {
+    width: 100%;
+    padding: 0px 25px;
+  }
+
+  /* ############   about section ################## */
+  #about {
+    flex-wrap: wrap;
+    padding: 100px 25px;
+  }
+
+  #about .about-right .about-right__box {
+    width: 100%;
+  }
+
+  .about-right .about-right__box i {
+    font-size: 40px;
+  }
+
+  /* ##################### GALLERY ################### */
+  #gallery {
+    padding: 0px 25px;
+  }
+
+  #gallery > .gallery_image {
+    width: 100%;
+  }
+
+  /* ################## POSITION FIXED NAVBAR ########## */
+  .header-nav.active {
+    margin: 0px;
+    width: calc(100% - 25px);
+  }
+
+  /* ##################### SERVICES SECTION  ############## */
+  #services {
+    flex-wrap: wrap;
+    padding: 100px 25px;
+    gap: 20px;
+  }
+  #services > div {
+    width: 100%;
+  }
+
+  #services blockquote {
+    margin-left: auto;
+  }
+
+  /* ################## TESTIMONAILS SECTION ############## */
+  #testimonails {
+    padding: 0px 25px;
+  }
+  .testimonails-feedback {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .testimonails-feedback > div {
+    width: 100%;
+  }
+
+  .testimonails-feedback blockquote {
+    width: 100%;
+  }
+
+  /* ######################## CLIENTS ################## */
+  #clients {
+    flex-wrap: wrap;
+    padding: 0px 25px;
+  }
+
+  .clients-right {
+    margin-top: 20px;
+  }
+
+  .clients-right > div {
+    width: 100%;
+  }
+
+  /* ################## PRICING ########### */
+
+  #pricing {
+    padding: 25px 25px;
+  }
+  .prices {
+    flex-wrap: wrap;
+  }
+
+  .prices > div {
+    width: 100%;
+  }
+}
+
+blockquote footer {
+  font-weight: 600 !important;
+}

@@ -77,6 +77,13 @@ a {
   margin: 0px 25px;
   padding: 25px 0px;
   height: 100%;
+  max-width: 1440px;
+}
+
+@media (min-width: 1440px) {
+  #wrapper {
+    margin: auto;
+  }
 }
 
 .header {
@@ -113,6 +120,7 @@ a {
   margin: 0px 25px;
   background: #fff;
   z-index: 100;
+  max-width: 1440px;
 }
 
 @keyframes navAnimation {

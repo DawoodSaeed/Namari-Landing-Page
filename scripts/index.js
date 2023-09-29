@@ -22,7 +22,12 @@ window.onload = init;
 
 const scrollHandler = () => {
   const navLinks = document.querySelectorAll(".header-nav__items ul li a");
-
+  const wrapper = document.getElementById("wrapper");
+  const margin = window
+    .getComputedStyle(wrapper)
+    .getPropertyValue("margin-left");
+  const nav = document.querySelector(".header-nav");
+  nav.style.margin = `0px ${parseInt(margin)}px`;
   const scrollPosition = window.scrollY;
   document.querySelectorAll("section").forEach((section) => {
     const top = section.offsetTop - 100;
@@ -45,6 +50,7 @@ const scrollHandler = () => {
   if (scrollPosition >= aboutTop) {
     navbar.classList.add("active");
   } else {
+    nav.style.margin = `0px`;
     navbar.classList.remove("active");
   }
 };

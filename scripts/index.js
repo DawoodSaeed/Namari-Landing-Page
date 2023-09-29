@@ -93,3 +93,22 @@ fullViewGallery
     if (currentIdx < 1) currentIdx = 6;
     img.src = `images/gallery-image-${currentIdx}.jpg`;
   });
+
+// For the mobile screen navabar
+
+const menuIcon = document.getElementById("mobileMenu");
+const mobileNav = document.querySelector(".mobile-screen-navbar");
+
+menuIcon.addEventListener("click", () => {
+  if (mobileNav.classList.contains("mb-active")) {
+    mobileNav.classList.remove("mb-active");
+  } else {
+    mobileNav.classList.add("mb-active");
+  }
+});
+
+Array.from(mobileNav.children).forEach((itm) => {
+  itm.addEventListener("click", () => {
+    mobileNav.classList.remove("mb-active");
+  });
+});

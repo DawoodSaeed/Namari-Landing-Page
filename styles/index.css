@@ -586,8 +586,64 @@ a {
 .choice {
   background: #fff;
 }
-/* For mobile screens  */
-@media (max-width: 600px) {
+
+/* Fo the menu that appears on mobile and tablet screens only */
+.mb-block {
+  display: none;
+}
+
+@media (max-width: 950px) {
+  /* Mobile Screen Navbar */
+
+  .mobile-screen-navbar {
+    position: fixed;
+    background: #fff;
+    top: 60px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0px 25px;
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-top: 3px solid #eee;
+    animation: mobileNavAnimation 0.3s ease-in;
+  }
+
+  @keyframes mobileNavAnimation {
+    0% {
+      width: 0%;
+      opacity: 0;
+    }
+
+    100% {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  .mobile-screen-navbar p {
+    padding-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .mb-active {
+    display: flex;
+  }
+
+  /* Chnaging the font weight from 300px to normal for */
+  /* Mobile screens and tablets; */
+  p {
+    font-weight: normal !important;
+  }
+
+  /* Making the website responsive */
+  body,
+  html,
+  #wrapper {
+    background: #ffffff;
+  }
   #wrapper {
     margin: 0;
     padding: 0;
@@ -597,6 +653,7 @@ a {
   }
   .header-nav {
     padding: 0px 25px;
+    height: 20px;
   }
 
   .header-nav__items,
@@ -604,46 +661,54 @@ a {
     display: none;
   }
   .header-text {
-    width: 100%;
+    width: 65%;
     padding: 0px 25px;
   }
 
-  /* ############   about section ################## */
   #about {
     flex-wrap: wrap;
     padding: 100px 25px;
   }
 
-  #about .about-right .about-right__box {
+  #about .about-left {
     width: 100%;
+  }
+
+  #about .about-right {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .about-right .about-right__box i {
     font-size: 40px;
   }
 
-  /* ##################### GALLERY ################### */
   #gallery {
     padding: 0px 25px;
   }
 
   #gallery > .gallery_image {
-    width: 100%;
+    width: 50%;
   }
 
   /* ################## POSITION FIXED NAVBAR ########## */
   .header-nav.active {
     margin: 0px;
-    width: calc(100% - 25px);
+    /* width: calc(100% - 25px); */
+    width: 100%;
   }
 
-  /* ##################### SERVICES SECTION  ############## */
   #services {
     flex-wrap: wrap;
     padding: 100px 25px;
     gap: 20px;
   }
+
   #services > div {
+    width: 45%;
+    flex-grow: 1;
+  }
+  #services > div:first-of-type {
     width: 100%;
   }
 
@@ -651,28 +716,83 @@ a {
     margin-left: auto;
   }
 
-  /* ################## TESTIMONAILS SECTION ############## */
   #testimonails {
     padding: 0px 25px;
   }
   .testimonails-feedback {
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
   }
 
   .testimonails-feedback > div {
-    width: 100%;
+    width: 45%;
+    flex-grow: 1;
   }
 
   .testimonails-feedback blockquote {
     width: 100%;
   }
 
-  /* ######################## CLIENTS ################## */
+  #pricing {
+    padding: 25px 25px;
+  }
+  .prices {
+    flex-wrap: wrap;
+  }
+
+  .prices > div:not(:last-of-type) {
+    width: 40%;
+    flex-grow: 1;
+  }
+
+  .prices > div:last-of-type {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
   #clients {
     flex-wrap: wrap;
     padding: 0px 25px;
   }
+
+  .mb-block {
+    display: block;
+  }
+}
+
+/* For mobile screens  */
+@media (max-width: 600px) {
+  .header-text {
+    width: 85%;
+    padding: 0px 25px;
+  }
+  /* ############   about section ################## */
+
+  #about .about-right .about-right__box {
+    width: 100%;
+  }
+
+  /* ##################### GALLERY ################### */
+
+  #gallery > .gallery_image {
+    width: 100%;
+  }
+
+  /* ##################### SERVICES SECTION  ############## */
+
+  #services > div {
+    width: 100%;
+  }
+
+  /* ################## TESTIMONAILS SECTION ############## */
+
+  .testimonails-feedback > div {
+    width: 100%;
+  }
+
+  /* ######################## CLIENTS ################## */
 
   .clients-right {
     margin-top: 20px;
@@ -692,7 +812,7 @@ a {
   }
 
   .prices > div {
-    width: 100%;
+    width: 100% !important;
   }
 }
 
